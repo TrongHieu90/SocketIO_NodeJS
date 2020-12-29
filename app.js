@@ -9,10 +9,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 const port = 8080;
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,8 +24,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', indexRouter);
-app.get('/', (req, res) => res.sendFile(__dirname + 'public/index.html'));
-app.use('/users', usersRouter);
+//app.get('/', (req, res) => res.sendFile(__dirname + 'public/index.html'));
+//app.use('/users', usersRouter);
+
+io.on('connection', socket => {
+  // let counter = 0;
+  // setInterval(() => {
+  //   socket.emit('hello', ++counter);
+  // }, 1000);
+  console.log('io user connected');
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,6 +52,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port , ()=> console.log('Connected'));
+server.listen(port , ()=> console.log('Connected at port: ' + port));
 
 module.exports = app;
