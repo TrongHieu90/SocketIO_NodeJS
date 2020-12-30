@@ -4,17 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, internal-scale = 1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <style>
+        .card-width{
+            width: 18rem;
 
+        }
+    </style>
     <title>Socket IO</title>
 </head>
-<body>
-<h1>Welcome to socket IO</h1>
-<input id = "msg" />
-<button id = 'sendBtn'>Send</button>
-<button id ='test'>TestBtn</button>
-<div style = 'margin-bottom: 50px' id = 'container'></div>
+
+<body class ='bg-success'>
+<div class = 'd-flex justify-content-center'>
+    <div class = 'h1 font italic mb-5 text-light'>
+        CHATROOMS
+    </div>
+</div>
+<div class = 'container-fluid'>
+    <div class="row h-100 w-100 m-0 p-0"></div>
+    <div class="col-6 col-md-3 d-flex.justify-content-center mb-4">
+        <div class ='card card-width'>
+            <a href="chatroom.html?category=music">
+                <img class ='card-img-top' src="img/music.jpeg" alt="Music">
+                <div class ='card-body'>
+                    <p class="h5">
+                        Music
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="javascripts/main.js"></script>
 </body>
+
 </html>
