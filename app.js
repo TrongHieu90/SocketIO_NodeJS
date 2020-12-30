@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var favicon = require('serve-favicon')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 const port = 8080;
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
@@ -21,19 +23,23 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+app.use('/stylesheets', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/javascripts', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+app.use('/javascripts', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 //app.use('/', indexRouter);
 //app.get('/', (req, res) => res.sendFile(__dirname + 'public/index.html'));
 //app.use('/users', usersRouter);
 
+const userArray = [];
+
 io.on('connection', socket => {
-
-  console.log('io user connected');
-
-  socket.on('outgoingMsg', msg =>{
-    io.emit('incomingMsg', msg);
-  })
+    userArray.push(socket.id);
+    console.log(userArray);
 });
 
 
