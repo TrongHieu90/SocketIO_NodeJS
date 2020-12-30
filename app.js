@@ -28,11 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/users', usersRouter);
 
 io.on('connection', socket => {
-  // let counter = 0;
-  // setInterval(() => {
-  //   socket.emit('hello', ++counter);
-  // }, 1000);
+
   console.log('io user connected');
+
+  socket.on('outgoingMsg', msg =>{
+    io.emit('incomingMsg', msg);
+  })
 });
 
 
