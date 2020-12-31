@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width = device-width, internal-scale = 1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <style>
         .card-width{
             width: 18rem;
 
+        }
+        a:hover{
+            text-decoration: none;
         }
     </style>
     <title>Socket IO</title>
@@ -21,24 +24,63 @@
     </div>
 </div>
 <div class = 'container-fluid'>
-    <div class="row h-100 w-100 m-0 p-0"></div>
-    <div class="col-6 col-md-3 d-flex.justify-content-center mb-4">
-        <div class ='card card-width'>
-            <a href="chatroom.html?category=music">
-                <img class ='card-img-top' src="img/music.jpeg" alt="Music">
-                <div class ='card-body'>
-                    <p class="h5">
-                        Music
-                    </p>
-                </div>
-            </a>
+    <div class="row h-100 w-100 m-0 p-0">
+        <div class="col-6 col-md-3 d-flex justify-content-center mb-4">
+            <div class ='card card-width'>
+                <a href="chatroom.html?category=music">
+                    <img class ='card-img-top' src="img/music.jpeg" alt="Music">
+                    <div class ='card-body'>
+                        <p class="h5">
+                            Music
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 d-flex justify-content-center mb-4">
+            <div class ='card card-width'>
+                <a href="chatroom.html?category=movies">
+                    <img class ='card-img-top' src="img/movie.jpg" alt="movie">
+                    <div class ='card-body'>
+                        <p class="h5">
+                            Movies
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 d-flex justify-content-center mb-4">
+            <div class ='card card-width'>
+                <a href="chatroom.html?category=games">
+                    <img class ='card-img-top' src="img/games.jpeg" alt="games">
+                    <div class ='card-body'>
+                        <p class="h5">
+                            Games
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 d-flex justify-content-center mb-4">
+            <div class ='card card-width'>
+                <a href="chatroom.html?category=books">
+                    <img class ='card-img-top' src="img/books.jpeg" alt="books">
+                    <div class ='card-body'>
+                        <p class="h5">
+                            Books
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
 
+
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="javascripts/main.js"></script>
+<!--<script src="javascripts/main.js"></script>-->
 </body>
 
 </html>

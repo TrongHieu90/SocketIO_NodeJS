@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <scrip src="javascripts/jquery.min.js"></scrip>
+    <scrip src="javascripts/popper.min.js"></scrip>
+    <scrip src="javascripts/bootstrap.min.js"></scrip>
+    <scrip src="javascripts/main.js"></scrip>
+    <title>Chatroom</title>
+</head>
+<body>
+<!-- NAME MODAL -->
+
+<div class="modal" id="nameModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enter your name for chatroom(leave blank for anonymous)</h5>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Enter Name" id="name">
+
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary text-white" id="nameButton">Enter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MESSAGE BOX -->
+<div class="container-fluid ">
+    <div class="row position-absolute height-10 bg-dark text-light w-100">
+        <div class="h3 col-12 col-sm-9  d-flex justify-content-center align-items-center ">
+            <span id='cat'></span> CHAT
+        </div>
+        <div class="font-italic col-12 col-sm-3 d-flex justify-content-center align-items-center">
+            <span id='population'>0</span> people online
+        </div>
+    </div>
+    <div class="row">
+        <div class="col overflow height-80 position-absolute mt-10 content" id="msgBox">
+
+        </div>
+    </div>
+</div>
+<!-- SEND AREA -->
+<div class="container-fluid height-10 fixed-bottom bg-dark text-light">
+    <div class="row mt-2">
+        <div class="col-9 col-sm-11 p-0">
+            <input class="form-control w-100" id="msg">
+        </div>
+        <div class="col-3 col-sm-1 p-0">
+            <button class="btn btn-success w-100" id="send">Send</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

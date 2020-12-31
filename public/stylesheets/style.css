@@ -1,8 +1,24 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.height-80 {
+  height: 80%;
 }
 
-a {
-  color: #00B7FF;
+.height-10 {
+  height: 10%;
+}
+
+.mt-10{
+  top:10%;
+}
+
+.content {
+  background-color: #16EA9A;
+}
+
+.overflow {
+  overflow: scroll;
+}
+
+body {
+  height: 100%;
+  width: 100%;
 }
